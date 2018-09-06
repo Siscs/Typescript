@@ -1,0 +1,28 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var ConcessionariaDao_1 = __importDefault(require("./ConcessionariaDao"));
+var Concessionaria_1 = __importDefault(require("./Concessionaria"));
+var PessoaDao_1 = __importDefault(require("./PessoaDao"));
+var Pessoa_1 = __importDefault(require("./Pessoa"));
+var CarroDao_1 = __importDefault(require("./CarroDao"));
+var Carro_1 = __importDefault(require("./Carro"));
+var DaoRepository_1 = __importDefault(require("./DaoRepository"));
+console.log('Concessionaria DAO........');
+var concessionariaDao = new ConcessionariaDao_1.default();
+var concessionaria = new Concessionaria_1.default('x', []);
+console.log(concessionariaDao.inserir(concessionaria));
+console.log('Pessoa DAO........');
+var pessoaDao = new PessoaDao_1.default();
+var pessoa = new Pessoa_1.default('jula', 'car x');
+console.log(pessoaDao.inserir(pessoa));
+console.log('Carro DAO........');
+var carroDao = new CarroDao_1.default();
+var carro = new Carro_1.default('honda hr-v', 'prata', 4);
+console.log(carroDao.inserir(carro));
+var daoRepository1 = new DaoRepository_1.default();
+var daoRepository2 = new DaoRepository_1.default();
+daoRepository1.inserir(carro);
+daoRepository2.inserir(pessoa);
